@@ -3,12 +3,13 @@
         <div class="col-7 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <%# attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
+                    <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
                     <h5 class="card-title"><%= current_user.name %></h5>
                     <% if @user.id == current_user.id %>
                         <h6 class="card-subtitle mb-2 text-muted"><%= current_user.email %></h6>
+                        <%= @user.profile %>
+                        <br>
                         <%= link_to 'ユーザー編集', edit_user_path %>
-                        <%# @user.profile %>
                     <% end %>
                 </div>
             </div>

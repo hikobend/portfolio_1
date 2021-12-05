@@ -5,16 +5,18 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">Todo</th>
-            <th scope="col">投稿者</th>
             <th scope="col">達成度</th>
+            <th scope="col">完了・削除ボタン</th>
           </tr>
         </thead>
         <tbody>
             <% @todos.each do |todo| %>
             <tr>
+            <% if todo.user == current_user %>
               <td><%= link_to todo.title, todo_path(todo) %></td>
-              <td><%= todo.user.name %></td>
-              <td><%= todo.body %></td>
+              <td><%= link_to todo.body,todo_path(todo) %></td>
+              <td><%= link_to "完了", "#", class: "btn btn-info" %><%= link_to "削除", "#", class: "btn btn-danger" %></td>
+            <% end %>
             </tr>
             <% end %>
         </tbody>

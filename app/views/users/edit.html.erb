@@ -23,6 +23,16 @@
         <div class="form-group">
           <label>メールアドレス</label>
           <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label>ユーザープロフィール</label>
+          <%= f.text_field :profile, class: "form-control" %>
+        </div> 
+        <div>
+        <div class="form-group">
+          <label>ユーザー画像</label>
+          <%= f.attachment_field :profile_image, class: "form-control" %>
+        </div>
         <div>
         <div>
           <%= f.submit class: "btn btn-success" %>
