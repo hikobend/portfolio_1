@@ -41,7 +41,7 @@ class TodosController < ApplicationController
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
-    redirect_to todos_path
+    redirect_to todos_path, notice: '削除が完了しました。'
   end
 
   private

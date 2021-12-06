@@ -1,3 +1,15 @@
 <% @users.each do |user| %>
-    <%= user.name %>
+    <ul class="media-list">
+        <li class="media">
+        <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+        <div class="card-body">
+            <h5 class="card-title"><%= user.name %></h5>
+            <p class="card-text"><%= user.profile %></p>
+            <% if user.id == current_user.id %>
+            <h5 class="card-title"><%= user.email %></h5>
+            <%= link_to 'ユーザー編集', edit_user_path, class: "btn btn-primary" %>
+            <% end %>
+        </div>
+        </li>
+    </ul>
 <% end %>

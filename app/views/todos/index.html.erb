@@ -15,7 +15,7 @@
             <% if todo.user == current_user %>
               <td><%= link_to todo.title, todo_path(todo) %></td>
               <td><%= link_to todo.body,todo_path(todo) %></td>
-              <td><%= link_to "完了", "#", class: "btn btn-info" %><%= link_to "削除", "#", class: "btn btn-danger" %></td>
+              <td><%= link_to "完了", "#", class: "btn btn-info" %><%= link_to '削除', todo_path(todo), method: :delete, class: "btn btn-danger" %></td>
             <% end %>
             </tr>
             <% end %>
