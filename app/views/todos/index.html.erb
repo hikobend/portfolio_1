@@ -7,15 +7,32 @@
             <th scope="col">Todo</th>
             <th scope="col">達成度</th>
             <th scope="col">完了・削除ボタン</th>
+            <th scope="col">公開状態</th>
+            <th scope="col">移動ボタン</th>
           </tr>
         </thead>
         <tbody>
             <% @todos.each do |todo| %>
             <tr>
             <% if todo.user == current_user %>
-              <td><%= link_to todo.title, todo_path(todo) %></td>
-              <td><%= link_to todo.body,todo_path(todo) %></td>
-              <td><%= link_to "完了", "#", class: "btn btn-info" %><%= link_to '削除', todo_path(todo), method: :delete, class: "btn btn-danger" %></td>
+              <% if todo.complete %>
+                <td class="complete"><%= todo.title3 %></td>
+              <% else %>
+                <td><%= todo.title3 %></td>
+              <% end %>
+              <td><%= todo.body %></td>
+              <td>
+                <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
+                <% if todo.complete %>
+                  <%= link_to 'もとに戻す', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
+                <% else %>
+                  <%= link_to '完了', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
+                <% end %>
+                <%# link_to "完了", todo_path(todo), class: "btn btn-info" %>
+                <%= link_to '削除', todo_path(todo), method: :delete, class: "btn btn-danger" %>
+              </td> <%# 追加 %>
+              <td></td>
+              <td><%= todo.complete ? '完了' : '未完了' %></td>
             <% end %>
             </tr>
             <% end %>

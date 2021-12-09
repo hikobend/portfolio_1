@@ -5,3 +5,9 @@
 .btn-info{
     margin-right: 20px;
 }
+
+// booleanが行われたときの変化
+.complete{
+    opacity: 0.5;
+    text-decoration: line-through;
+}

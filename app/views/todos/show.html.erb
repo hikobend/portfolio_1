@@ -3,15 +3,15 @@
     <div class="col-6 mx-auto">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><%= @todo.title %></h5>
+          <h5 class="card-title"><%= @todo.title3 %></h5>
           <p class="card-text"><%= simple_format @todo.body %></h5>
           <p class="card-text">
             <small class="text-muted">更新日:<%= @todo.updated_at.strftime("%Y-%m-%d") %></small>
           </p>
-            <% if @todo.user == current_user %>
-              <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-success" %>
-              <%= link_to '削除', todo_path(@todo), method: :delete, class: "btn btn-danger" %>
-            <% end %>
+          <% if @todo.user == current_user %>
+            <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-success" %>
+            <%= link_to '削除', todo_path(@todo), method: :delete, class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
     </div>

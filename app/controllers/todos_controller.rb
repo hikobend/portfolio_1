@@ -38,14 +38,26 @@ class TodosController < ApplicationController
     end
   end
 
+  # booleanの:completeをtrue, falseに変更するカラム
+  def is_finished 
+    @todo = Todo.find(params[:id])
+    if @todo.complete == false
+      @todo.update(complete: true)
+      redirect_to todos_path, notice: '完了しました。'
+    else
+      @todo.update(complete: false)
+      redirect_to todos_path, notice: 'もとに戻しました'
+    end
+  end
+
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
-    redirect_to todos_path, notice: '削除が完了しました。'
+    redirect_to todos_path, alert: '削除しました。'
   end
 
   private
   def todo_params
-    params.require(:todo).permit(:title, :body)
+    params.require(:todo).permit(:title3, :body)
   end
 end

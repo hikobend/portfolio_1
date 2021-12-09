@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   resource :user
   get '/users', to: 'users#index'
-  resources :todos
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # :todosの中にmemberを取り出す
+  resources :todos do #追加
+    member do #追加
+      put :is_finished
+    end
+  end
+  
 end
