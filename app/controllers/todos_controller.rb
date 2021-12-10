@@ -50,6 +50,18 @@ class TodosController < ApplicationController
     end
   end
 
+  # booleanの:releaseをtrue, falseに変更するカラム
+  def is_release 
+    @todo = Todo.find(params[:id])
+    if @todo.release == false
+      @todo.update(release: true)
+      redirect_to todos_path, notice: '公開しました'
+    else
+      @todo.update(release: false)
+      redirect_to todos_path, notice: '非公開にしました'
+    end
+  end
+
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
@@ -58,6 +70,6 @@ class TodosController < ApplicationController
 
   private
   def todo_params
-    params.require(:todo).permit(:title3, :body)
+    params.require(:todo).permit(:title3, :body, :release)
   end
 end

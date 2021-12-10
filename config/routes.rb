@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :todos do #追加
     member do #追加
       put :is_finished
+      put :is_release
     end
   end
   
