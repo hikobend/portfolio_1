@@ -5,11 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    if @user_id != current_user.id
+      redirect_to todos_path, alert: '不正なアクセスです'
+    end
   end
 
   def update

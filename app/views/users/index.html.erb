@@ -1,21 +1,20 @@
 <% @users.each do |user| %>
-    <ul class="media-list">
-        <li class="media">
+  <ul class="media-list">
+    <li class="media">
+      <%= link_to user_path(user) do %>
         <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
-        <div class="card-body">
-            <h5 class="card-title"><%= user.name %></h5>
-            <p class="card-text"><%= user.profile %></p>
-            <% if user.id == current_user.id %>
-              <h5 class="card-title">
-                <%= user.email %>
-              </h5>
-            <%= link_to 'ユーザー編集', edit_user_path, class: "btn btn-primary" %>
-            <% else %>
-              <h5 class="card-title">
-              </h5>
-            <%= link_to '投稿を見る', todos_path, class: "btn btn-primary" %>
-            <% end %>
-        </div>
-        </li>
-    </ul>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to user.name, user_path(user) %>
+        </h5>
+        <% if user.id == current_user.id %>
+          <h5 class="card-title">
+            <%= link_to user.email, user_path(user) %>
+          </h5>
+        <% end %>
+      </div>
+    </li>
+    <hr>
+  </ul>
 <% end %>

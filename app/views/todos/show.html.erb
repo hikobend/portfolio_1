@@ -3,15 +3,28 @@
     <div class="col-6 mx-auto">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><%= @todo.title3 %></h5>
-          <p class="card-text"><%= simple_format @todo.body %></h5>
-          <p class="card-text">
-            <small class="text-muted">更新日:<%= @todo.updated_at.strftime("%Y-%m-%d") %></small>
-          </p>
-          <% if @todo.user == current_user %>
-            <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-success" %>
-            <%= link_to '削除', todo_path(@todo), method: :delete, class: "btn btn-danger" %>
-          <% end %>
+          <h5 class="card-title">
+            Todoリスト : <%= @todo.title3 %>
+          </h5>
+          <hr>
+          <h6 class="card-subtitle mb-2 text-muted">
+            達成度 : <%= @todo.body %>
+          </h6>
+          <hr>
+          <h6 class="card-subtitle mb-2 text-muted">
+          更新日時 : <time><%= @todo.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
+          </h6>
+          <hr>
+          <div class="text-center">
+            <% if @todo.user.id == current_user.id %>
+              <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-primary" %>
+              <%= link_to 'リスト一覧', todos_path, class: "btn btn-primary" %> 
+            <% end %>
+            <br>
+            <%= link_to user_path(@todo.user) do %>
+              <%= @todo.user.name %>さんのページへ
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

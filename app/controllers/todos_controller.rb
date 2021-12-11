@@ -16,7 +16,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
     @todo.user_id = current_user.id
     if @todo.save
-      redirect_to todos_path, notice: '追加に成功しました'
+      redirect_to todo_path(@todo), notice: '追加に成功しました'
     else
       render :new
     end
@@ -32,7 +32,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     if @todo.update(todo_params)
-      redirect_to todos_path, notice: "編集に成功しました。"
+      redirect_to todo_path(@todo), notice: "編集に成功しました。"
     else
       render :edit
     end
