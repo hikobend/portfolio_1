@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+
   def index
+    # idをログインしている人以外のuser全てを取ってくる。
     @users = User.all
   end
 
@@ -22,6 +24,20 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  # あるユーザーがフォローしている人全員を取得するアクションを定義
+  def followings
+    user = User.find(params[:id])
+    # userがフォローしている人全員を取ってくる
+    # followingsはrelationship.rbで定義したもの
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    # userのフォロワーを人全員を取ってくる
+    @users = user.followers
   end
 
   private
