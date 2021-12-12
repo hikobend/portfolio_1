@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   root to: 'home#top'
   devise_for :users
   # resource :user
@@ -12,5 +11,5 @@ Rails.application.routes.draw do
       put :is_release
     end
   end
-  
+  get '/search', to: 'searchs#search'
 end

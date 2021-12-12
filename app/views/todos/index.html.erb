@@ -25,7 +25,7 @@
                   </td>
                 <% end %>
                 <td>
-                  <%= link_to todo.body, todo_path(todo) %>
+                  <%= todo.body %>
                 </td>
                 <td>
                   <%= link_to todo.user.name, user_path(todo.user.id) %>
@@ -56,18 +56,18 @@
                 <% elsif todo.user != current_user && todo.release == true %>
                   <% if todo.complete %>
                     <td class="complete">
-                      <%= todo.title3 %>
+                      <%= link_to todo.title3, todo_path(todo) %>
                     </td>
                   <% else %>
                     <td>
-                      <%= todo.title3 %>
+                      <%= link_to todo.title3, todo_path(todo) %>
                     </td>
                   <% end %>
                   <td>
                     <%= todo.body %>
                   </td>
                   <td>
-                    <%= todo.user.name %>
+                    <%= link_to todo.user.name, user_path(todo.user.id) %>
                   </td>
                   <td>
                     <%= "変更できません" %>
