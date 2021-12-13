@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   
   get '/search', to: 'searchs#search'
 
+  resources :groups do
+    get "join" => "groups#join"
+  end
+  
 end

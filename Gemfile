@@ -57,6 +57,8 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'bcrypt', '~> 3.1.7'
+# エラーメッセージを日本語化にする
+gem 'rails-i18n', '~> 6.0.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

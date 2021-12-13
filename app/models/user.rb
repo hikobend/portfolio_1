@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :rememberable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   before_save { self.email = email.downcase }
@@ -21,14 +21,14 @@ class User < ApplicationRecord
   # フォローされる側からフォローしているユーザを取得する
   has_many :followers, through: :reverse_of_relationships, source: :following
 
+  has_many :group_users
+  has_many :groups, through: :group_users
+
   # ユーザーがあるユーザーにフォローされているかどうかを判定するメソッド
   # 引数のuserにフォローされているかどうかを判定。
   def is_followed_by?(user)
     # あるユーザーが引数に渡されたユーザーに、フォローされているかどうか判定
     reverse_of_relationships.find_by(following_id: user.id).present?
   end
-
-  # Gemfileにbcryptを追加した
-  has_secure_password
 
 end
