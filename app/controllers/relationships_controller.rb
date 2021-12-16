@@ -9,7 +9,7 @@ class RelationshipsController < ApplicationController
         following = current_user.relationships.build(follower_id: params[:user_id])
         following.save
         # 以前のpathに戻るようにする。もし見つからなかったら、root_pathに戻るようにする 
-        redirect_to request.referrer, notice: 'フォローしました'
+        redirect_to request.referrer || root_path, notice: 'フォローしました'
     end
 
     # フォローを解除する
@@ -17,7 +17,7 @@ class RelationshipsController < ApplicationController
         following = current_user.relationships.find_by(follower_id: params[:user_id])
         following.destroy
         # 以前のpathに戻るようにする。もし見つからなかったら、root_pathに戻るようにする 
-        redirect_to request.referrer, alert: 'フォロー解除しました'
+        redirect_to request.referrer || root_path, alert: 'フォロー解除しました'
     end
 
 end

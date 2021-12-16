@@ -21,9 +21,7 @@ class User < ApplicationRecord
   # フォローされる側からフォローしているユーザを取得する
   has_many :followers, through: :reverse_of_relationships, source: :following
 
-  has_many :group_users
-  has_many :groups, through: :group_users
-
+  has_many :requests, dependent: :destroy
   # ユーザーがあるユーザーにフォローされているかどうかを判定するメソッド
   # 引数のuserにフォローされているかどうかを判定。
   def is_followed_by?(user)
