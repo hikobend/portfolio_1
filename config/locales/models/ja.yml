@@ -2,7 +2,12 @@ ja:
   activerecord:
     attributes:
       user:
+        name: ユーザー名
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
+        other: "%{count}個のエラーがあるため、ユーザーを保存出来ません。"
+      todo:
+       title3: タスク名
+       body: 達成度

@@ -14,6 +14,7 @@ ja:
       timeout: 'セッションがタイムアウトしました。もう一度ログインしてください。'
       unauthenticated: 'アカウント登録もしくはログインしてください。'
       unconfirmed: 'メールアドレスの本人確認が必要です。'
+      other: "%{count}個のエラーがあるため、ユーザーを保存出来ません。"
     mailer:
       confirmation_instructions:
         subject: 'アカウントの有効化について'
@@ -56,11 +57,12 @@ ja:
       not_found: 'は見つかりませんでした。'
       not_locked: 'は凍結されていません。'
       not_saved:
-        one: "エラーが発生したため %{resource} は保存されませんでした:"
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした:"
+        one: "エラーが発生しました"
+        other: "エラーが発生しました"
       taken: "は既に使用されています。"
       blank: "が入力されていません。"
       too_short: "は%{count}文字以上に設定して下さい。"
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"
+      other: "ユーザーを保存出来ません。"

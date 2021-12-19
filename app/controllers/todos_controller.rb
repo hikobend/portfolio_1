@@ -48,10 +48,12 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     if @todo.complete == false
       @todo.update(complete: true)
-      redirect_to todos_path, notice: '完了しました。'
+      redirect_back(fallback_location: root_path)
+      # notice: 'もとに戻しました'
     else
       @todo.update(complete: false)
-      redirect_to todos_path, notice: 'もとに戻しました'
+      redirect_back(fallback_location: root_path)
+      # notice: 'もとに戻しました'
     end
   end
 

@@ -18,13 +18,8 @@
 
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
-    .new-title{
-        color: red;
-    }
  }
  @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
-    .new-title{
-        color: #00ff00;
-    }
+    
  }

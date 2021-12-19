@@ -18,12 +18,18 @@
  @import "bootstrap";
 
  .logo {
-   font-family: cursive;
-   font-size: 24px;
-   color: rgb(93, 212, 129);
+  font-family: cursive;
+  font-size: 30px;
+  color: #fff;
+  text-shadow:0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129);
+ }
+ 
+ .logo:hover{
+  text-decoration: none;
+  color: #fff;
+  text-shadow:0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129);
  }
 
- 
 /* チェックボックスを非表示にする */
 .drawer_hidden {
    display: none;
@@ -108,15 +114,31 @@
  }
 
 .nav_li{
-   color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
- @media screen and (max-width: 1000px) {
+
+.links{
+  margin-top: 20px;
+}
+
+.font-color{
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.font-color:hover{
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+}
+@media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
    .nav{
       display: block;
    }
  }
- @media screen and (max-width: 480px) {
+
+@media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
     .nav{
       display: block;

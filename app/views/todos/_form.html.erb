@@ -1,16 +1,22 @@
 <%= form_for todo do |t| %>
     <div class="form-group">
-        <label>Todo名</label>
-        <%= t.text_field :title3, class: 'form-control' %>
+        <label>タスク名</label>
+        <%= t.text_field :title3, class: 'form-control', placeholder: "タスク名" %>
     </div>
     <div class="form-group">
         <label>達成度</label>
-        <%= t.text_area :body, class: 'form-control' %>
+        <%= t.text_area :body, class: 'form-control', placeholder: "達成度" %>
     </div>
     <div class="form-group">
         <%= t.radio_button :release, :false %>
+        <span class="icon is-small">
+            <i class="fas fa-lock"></i>
+        </span>
         <%= t.label :release, "非公開", {value: :false, style: "display: inline-block;"} %>
         <%= t.radio_button :release, :true %>
+        <span class="icon is-small">
+            <i class="fas fa-lock-open"></i>
+        </span>
         <%= t.label :release, "公開", {value: :true, style: "display: inline-block;"} %>    
     </div>
     

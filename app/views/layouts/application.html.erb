@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Myapp</title>
+    <title>WaST</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -92,10 +92,10 @@
     <% if flash[:notice] %>
       <div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>
     <% end %>
+    
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
     <% end %>
-    
     <%= yield %>
   </body>
 </html>
