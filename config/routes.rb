@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       put :is_release
     end
   end
+
+  get '/myindex', to: 'todos#myindex'
   
   get '/search', to: 'searchs#search'
   

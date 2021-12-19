@@ -7,7 +7,6 @@
           <tr>
             <th>Name</th>
             <th>フォロー</th>
-            <th>リクエスト</th>
           </tr>
         </thead>
         <tbody>
@@ -28,18 +27,6 @@
                     <%=link_to user_relationships_path(user), method: :post do %>
                       <button type="button" class="btn btn btn-primary">フォロー</button>
                     <% end %>
-                  <% end %>
-                <% end %>
-              </td>
-              <td>
-                <% if user != current_user %>
-                <%# 相互フォローしている時 %>
-                  <% if user.is_followed_by?(current_user) && current_user.is_followed_by?(user) %>
-                    <%= link_to "#", method: :delete do %>
-                      <button type="button" class="btn btn btn-primary">リクエスト</button>
-                    <% end %>
-                  <% else %>
-                      <%= "相互フォローのときに使用可" %> 
                   <% end %>
                 <% end %>
               </td>

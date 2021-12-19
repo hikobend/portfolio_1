@@ -1,9 +1,8 @@
 ja:
   activerecord:
-    models:
-      event: イベント
     attributes:
-      event:
-        name: イベント名
-        place: 開催場所
-        content: イベント内容
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン

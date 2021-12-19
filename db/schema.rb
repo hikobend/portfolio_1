@@ -10,29 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_104810) do
+ActiveRecord::Schema.define(version: 2021_12_12_051525) do
 
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "following_id", null: false
     t.integer "follower_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "request_id", null: false
-    t.string "when", null: false
-    t.string "where"
-    t.string "who"
-    t.string "what"
-    t.text "why"
-    t.string "whom"
-    t.string "with"
-    t.text "how"
-    t.text "how_many"
-    t.text "how_much"
-    t.string "important", null: false
-    t.boolean "approval", default: false, null: fals
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

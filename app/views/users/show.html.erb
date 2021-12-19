@@ -1,90 +1,5 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-10 mx-auto">
-      <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Todo</th>
-            <th scope="col">達成度</th>
-            <th scope="col">変更ボタン</th>
-            <th scope="col">公開状態</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @user.todos.each do |todo| %>
-            <tr>
-              <% if todo.user == current_user %>
-                <% if todo.complete %>
-                  <td class="complete">
-                    <%= link_to todo.title3, todo_path(todo) %>
-                  </td>
-                <% else %>
-                  <td>
-                    <%= link_to todo.title3, todo_path(todo) %>
-                  </td>
-                <% end %>
-                <td>
-                  <%= link_to todo.body, todo_path(todo) %>
-                </td>
-                <td>
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.complete %>
-                    <%= link_to '戻す', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% else %>
-                    <%= link_to '完了', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% end %>
-                  <%= link_to '削除', todo_path(todo), method: :delete, data: {confirm: "本当に削除しますか?"}, class: "btn btn-danger" %>
-                </td>
-                <td>
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.release %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock-open"></i>
-                    </span>
-                    <%= '公開中' %>
-                  <% else %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock"></i>
-                      <%= '非公開' %>
-                    </span>
-                  <% end %>
-                </td>
-                <% elsif todo.user != current_user && todo.release == true %>
-                  <% if todo.complete %>
-                    <td class="complete">
-                      <%= todo.title3 %>
-                    </td>
-                  <% else %>
-                    <td>
-                      <%= todo.title3 %>
-                    </td>
-                  <% end %>
-                  <td>
-                    <%= todo.body %>
-                  </td>
-                  <td>
-                    <%= "変更不可" %>
-                  </td>
-                  <td>
-                    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                    <% if todo.release %>
-                      <span class="icon is-small">
-                        <i class="fas fa-lock-open"></i>
-                      </span>
-                      <%= '公開中' %>
-                    <% end %>
-                  </td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <div class="row">
     <div class="col-7 mx-auto">
       <div class="card">
         <div class="card-body">
@@ -100,7 +15,7 @@
             <h6 class="card-subtitle mb-2 text-muted">
               <%= current_user.email %>
             </h6>
-            <%= @user.profile %>
+            <%= simple_format @user.profile %>
             <br>
             <%= link_to 'ユーザー編集', edit_user_path(@user) %>
           <% elsif @user != current_user %>

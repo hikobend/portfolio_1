@@ -62,5 +62,8 @@ gem 'rails-i18n', '~> 6.0.0'
 
 # row_orderというカラムでレコードをソートし、並び替えた時の全体の再配置やリバランスを自動的に行ってくれる
 gem 'ranked-model'
+
+gem 'jquery-ui-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,2 +1,24 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <h4 class="name_origin">
+        <p><span class="under">W</span>eb <span class="under">a</span>pplication to <span class="under">S</span>hare <span class="under">T</span>asks</p>
+      </h4>
+      <div class="f-container">
+        <%= link_to new_user_session_path, class: "nav-link f-item" do %>
+            <button type="button" class="btn btn btn-primary">ログイン</button>
+        <% end %>
+        <%= link_to new_user_registration_path, class: "nav-link f-item" do %>
+            <button type="button" class="btn btn btn-primary">新規登録</button>
+        <% end %>
+      </div>
+
+      <div class="plan">
+        <ul>今後実装予定の機能</ul>
+        <li>相互フォロー状態時に、タスクをお願いできる機能を追加</li>
+        <li>グループ機能を追加</li>
+        <li>グループ内で共通のタスクを表示する機能を追加</li>  
+      </div>
+    </div>
+  </div>
+</div>
