@@ -11,6 +11,7 @@
         </thead>
         <tbody>
           <% @users.each do |user| %>
+            
             <tr>
               <td>
                 <%= link_to user_path(user) do %>
@@ -31,6 +32,7 @@
                 <% end %>
               </td>
             </tr>
+
           <% end %>
         </tbody>
       </table>

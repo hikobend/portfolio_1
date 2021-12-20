@@ -2,8 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .f-container{
-  display: flex; 
+  text-align: center;
+  justify-content: space-between;
+  padding: 0;
 }
+
+.f-item{
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.top_login{
+  margin: 10px;
+}
+
+.top_new{
+  margin: 10px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -18,12 +36,32 @@
   color: rgb(93, 212, 129);
 }
 
+h3{
+  font-weight: bold;
+}
+
 .under{
   font-size: 30px;
   color: #fff;
   text-shadow:0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129),0 0 3px rgb(93, 212, 129);
 }
 
+.top_h5{
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.plan{
+  text-align: left;
+  border-radius: 10px;
+}
+
 .plan_item{
+  margin: 10px 0;
   list-style: none;
+}
+
+ul{
+  padding: 0;
 }

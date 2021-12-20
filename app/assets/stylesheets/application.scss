@@ -18,6 +18,7 @@
  @import "bootstrap";
 
  .logo {
+   margin: 10px;
   font-family: cursive;
   font-size: 30px;
   color: #fff;
@@ -131,16 +132,27 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.session-group{
+  margin-bottom: 20px;
+}
+
+.registrations_title {
+  text-align: left;
+}
+
+.registrations_text { 
+  display: inline-block;
+}
+
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
    .nav{
       display: block;
    }
- }
+}
 
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
-    .nav{
-      display: block;
-   }
- }
+
+}

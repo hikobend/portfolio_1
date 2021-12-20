@@ -1,26 +1,28 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-10 mx-auto">
-      <h4 class="name_origin">
+      <h4 class="name_origin text-center">
         <p><span class="under">W</span>eb <span class="under">a</span>pplication to <span class="under">S</span>hare <span class="under">T</span>asks</p>
       </h4>
       <div class="f-container">
         <%= link_to new_user_session_path, class: "nav-link f-item" do %>
-            <button type="button" class="btn btn btn-primary">ログイン</button>
+            <button type="button" class="btn btn btn-primary top_login">ログイン</button>
         <% end %>
         <%= link_to new_user_registration_path, class: "nav-link f-item" do %>
-            <button type="button" class="btn btn btn-primary">新規登録</button>
+            <button type="button" class="btn btn btn-primary top_new">新規登録</button>
         <% end %>
       </div>
 
       <div>
-      <p>タスクを管理するアプリケーションです。タスクを公開か非公開を設定でき、個人的に使用できます。</p>
+      
       </div>
-      <div class="plan">
-        <ul>今後実装予定の機能
-          <li class="plan_item">相互フォロー状態時に、タスクをお願いできる機能を追加</li>
-          <li class="plan_item">グループ機能を追加</li>
-          <li class="plan_item">グループ内で共通のタスクを表示する機能を追加</li>
+      <div class="plan text-center">
+        <ul><h5 class="top_h5">今後実装予定の機能</h5>
+          <div class="plan_li">
+          <li class="plan_item">相互フォロー状態時に、タスクをお願いできる機能</li>
+          <li class="plan_item">グループ機能</li>
+          <li class="plan_item">グループ内で共通のタスクを表示する機能</li>
+          </div>
         </ul>
       </div>
     </div>

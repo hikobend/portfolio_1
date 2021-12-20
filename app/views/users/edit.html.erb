@@ -17,11 +17,11 @@
       <%= form_for @user do |f| %>
         <div class="form-group">
           <label>ユーザー名</label>
-          <%= f.text_field :name, class: "form-control" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "ユーザー名を入力" %>
         </div>
         <div class="form-group">
           <label>ユーザープロフィール</label>
-          <%= f.text_area :profile, class: "form-control" %>
+          <%= f.text_area :profile, class: "form-control", placeholder: "プロフィールを入力" %>
         </div> 
         <div>
         <div class="form-group">

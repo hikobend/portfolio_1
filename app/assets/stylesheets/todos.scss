@@ -16,10 +16,69 @@
     opacity: 0.7;
 }
 
+.myindex{
+      /* 基本的なサイズの設定 */
+  font-weight: bold;
+}
+
+.todo_header{
+    text-align: center;
+}
+
+.myindex_btn{
+    text-align: center;
+}
+
+.btn-info{
+    padding: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-danger{
+    padding: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.myindex_release{
+    text-align: center;
+}
+
+.todo_header_list{
+    min-width: 73px;
+}
+
+.todo_header_btn{
+    min-width: 73px;
+}
+
+.todo_header_release{
+    min-width: 73px;
+}
+
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
- }
- @media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    
- }
+
+    .myindex_btn{
+        display: flex;    
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        
+    .btn-info{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .btn-danger{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+/* 480px以下に適用されるCSS（スマホ用） */
+
+}

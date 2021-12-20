@@ -19,25 +19,25 @@
 
         <div class="form-group">
           <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "なまえ" %>
+          <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "入力してください" %>
         </div>
 
         <div class="form-group">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "入力してください" %>
         </div>
 
-        <div class="form-group">
-          <%= f.label :password %>
+        <div class="form-group registrations_title">
+          <%= f.label :password, class: "registrations_text"%>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> 文字以上入力してください)</em>
+            <em class= "registrations_text"> ( <%= @minimum_password_length %> 文字以上入力してください ) </em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "入力してください" %>
         </div>
 
         <div class="form-group">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "入力してください" %>
         </div>
 
         <div>

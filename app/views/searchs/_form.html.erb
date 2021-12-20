@@ -4,7 +4,7 @@
       <% if user_signed_in? %>
         <%= form_tag(search_path, method: :get) do %>
           <label>ユーザー検索</label>
-          <%= text_field_tag 'content' %>
+          <%= text_field_tag 'content', '', class: '', placeholder: 'ユーザー名を入力' %>
           <%= select_tag 'method', options_for_select({ "完全一致" => "perfect", "部分一致" => "partial" }) %>
           <%= submit_tag '検索' %>
         <% end %>

@@ -48,12 +48,12 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     if @todo.complete == false
       @todo.update(complete: true)
+      flash[:notice] = "完了しました。"
       redirect_back(fallback_location: root_path)
-      # notice: 'もとに戻しました'
     else
       @todo.update(complete: false)
+      flash[:notice] = "もとに戻しました。"
       redirect_back(fallback_location: root_path)
-      # notice: 'もとに戻しました'
     end
   end
 
@@ -72,7 +72,8 @@ class TodosController < ApplicationController
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
-    redirect_to todos_path, alert: '削除しました。'
+    flash[:alert] = '削除しました。'
+    redirect_back(fallback_location: root_path)
   end
 
   private
