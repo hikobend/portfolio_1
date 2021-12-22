@@ -1,86 +1,15 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-10 mx-auto">
-      <div>
-        <%= link_to '自分のリスト', myindex_path, class: "font-color" %> | <%= link_to 'みんなの投稿一覧', todos_path, class: "font-color myindex" %>
-      </div>
-      <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Todo</th>
-            <th scope="col">投稿者</th>
-            <th scope="col">変更ボタン</th>
-            <th scope="col">公開状態</th>
-          </tr>
-        </thead>
+      <%= render 'header_index' %>
+      <%= render 'header' %>
         <tbody>
           <% @todos.each do |todo| %>
             <tr>
               <% if todo.user == current_user %>
-                <% if todo.complete %>
-                  <td class="complete">
-                    <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                  </td>
-                <% else %>
-                  <td>
-                    <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                  </td>
-                <% end %>
-                <td>
-                <% if todo.user.name == current_user.name %>
-                  <%= link_to "あなた", user_path(todo.user.id), class: "font-color" %>
-                <% else %>
-                  <%= link_to todo.user.name, user_path(todo.user.id), class: "font-color" %>
-                <% end %>
-                </td>
-                <td>
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.complete %>
-                    <%= link_to '戻す', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% else %>
-                    <%= link_to '完了', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% end %>
-                  <%= link_to '削除', todo_path(todo), method: :delete, data: {confirm: "本当に削除しますか?"}, class: "btn btn-danger" %>
-                </td>
-                <td>
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.release %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock-open"></i>
-                    </span>
-                    <%= '公開中' %>
-                  <% else %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock"></i>
-                      <%= '非公開' %>
-                    </span>
-                  <% end %>
-                </td>
+                <%= render 'graph_index', todo: todo %>
                 <% elsif todo.user != current_user && todo.release == true %>
-                  <% if todo.complete %>
-                    <td class="complete">
-                      <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                    </td>
-                  <% else %>
-                    <td>
-                      <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                    </td>
-                  <% end %>
-                  <td>
-                    <%= link_to todo.user.name, user_path(todo.user.id), class: "font-color" %>
-                  </td>
-                  <td>
-                    <%= "---" %>
-                  </td>
-                  <td>
-                    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                    <% if todo.release %>
-                      <span class="icon is-small">
-                        <i class="fas fa-lock-open"></i>
-                      </span>
-                      <%= '公開中' %>
-                    <% end %>
-                  </td>
+                <%= render 'release_true', todo: todo %>
               <% end %>
             </tr>
           <% end %>

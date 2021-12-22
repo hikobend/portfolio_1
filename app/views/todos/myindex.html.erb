@@ -1,55 +1,13 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-10 mx-auto">
-      <div>
-        <%= link_to '自分のリスト', myindex_path, class: "font-color myindex" %> | <%= link_to 'みんなの投稿一覧', todos_path, class: "font-color" %>
-      </div>
-      <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col" class="todo_header_list">リスト</th>
-            <th scope="col">達成度</th>
-            <th scope="col" class="todo_header todo_header_btn">ボタン</th>
-            <th scope="col" class="todo_header todo_header_release">公開</th>
-          </tr>
-        </thead>
+      <%= render 'header_myindex' %>
+      <%= render 'header' %>
         <tbody>
           <% @todos.each do |todo| %>
             <tr>
               <% if todo.user == current_user %>
-                <% if todo.complete %>
-                  <td class="complete">
-                    <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                  </td>
-                <% else %>
-                  <td>
-                    <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
-                  </td>
-                <% end %>
-                <td>
-                  <%= link_to todo.body, todo_path(todo), class: "font-color" %>
-                </td>
-                <td class="myindex_btn">
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.complete %>
-                    <%= link_to '戻す', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% else %>
-                    <%= link_to '完了', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
-                  <% end %>
-                  <%= link_to '削除', todo_path(todo), method: :delete, data: {confirm: "本当に削除しますか?"}, class: "btn btn-danger" %>
-                </td>
-                <td class="myindex_release">
-                  <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
-                  <% if todo.release %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock-open"></i>
-                    </span>
-                  <% else %>
-                    <span class="icon is-small">
-                      <i class="fas fa-lock"></i>
-                    </span>
-                  <% end %>
-                </td>
+                <%= render 'graph_myindex', todo: todo %>
               <% end %>
             </tr>
           <% end %>

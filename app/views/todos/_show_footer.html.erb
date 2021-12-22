@@ -1,0 +1,11 @@
+<div class="show_botton flexbox-center text-left">
+<% if @todo.user.id == current_user.id %>
+    <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-primary show_button_item" %>
+    <%= link_to myindex_path, class: "btn btn-primary show_button_item" do %>
+    <%= current_user.name %>のリスト
+    <% end %>
+<% end %>
+<%= link_to user_path(@todo.user), class: "btn btn-primary show_button_item" do %>
+    ユーザーの詳細
+<% end %>
+</div>

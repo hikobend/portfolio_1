@@ -1,0 +1,13 @@
+<%= render 'complete', todo: todo %>
+<td>
+    <%= link_to todo.user.name, user_path(todo.user.id), class: "font-color" %>
+</td>
+<td class="myindex_btn">
+    <%= "---" %>
+</td>
+<td class="myindex_release">
+    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
+    <% if todo.release %>
+    <%= render 'open' %>
+    <% end %>
+</td>

@@ -1,0 +1,7 @@
+<td>
+    <% if todo.user.name == current_user.name %>
+        <%= link_to "あなた", user_path(todo.user.id), class: "font-color" %>
+    <% else %>
+        <%= link_to todo.user.name, user_path(todo.user.id), class: "font-color" %>
+    <% end %>
+</td>

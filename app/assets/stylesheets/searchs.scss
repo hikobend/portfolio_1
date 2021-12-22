@@ -1,3 +1,28 @@
 // Place all the styles related to the searchs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form_text{
+    text-align: center;
+}
+
+span{
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+
+    .form_text{
+        text-align: right;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+ .user_search{
+     display: none;
+ } 
+
+}

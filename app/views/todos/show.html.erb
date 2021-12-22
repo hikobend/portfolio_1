@@ -3,28 +3,13 @@
     <div class="col-6 mx-auto">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">
-            タスク : <%= @todo.title3 %>
-          </h5>
+          <h5 class="card-title">タスク : <%= @todo.title3 %></h5>
           <hr>
-          <h6 class="card-subtitle mb-2 text-muted">
-            達成度 : <%= @todo.body %>
-          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">達成度 : <%= @todo.body %></h6>
           <hr>
-          <h6 class="card-subtitle mb-2 text-muted">
-          更新日時 : <time><%= @todo.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
-          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">更新日時 : <time><%= @todo.updated_at.strftime("%Y-%m-%d %H:%M") %></time></h6>
           <hr>
-          <div class="text-center">
-            <% if @todo.user.id == current_user.id %>
-              <%= link_to '編集', edit_todo_path(@todo), class: "btn btn-primary" %>
-              <%= link_to '投稿一覧', todos_path, class: "btn btn-primary" %>
-            <% end %>
-            <br>
-            <%= link_to user_path(@todo.user) do %>
-              <%= @todo.user.name %>さんのページへ
-            <% end %>
-          </div>
+          <%= render 'show_footer', todo: @todo %>
         </div>
       </div>
     </div>

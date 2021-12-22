@@ -145,6 +145,11 @@
   display: inline-block;
 }
 
+.plan_li{
+  padding: 10px;
+  border: thick double rgb(93, 212, 129);
+}
+
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
    .nav{
@@ -154,5 +159,5 @@
 
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
-
+  
 }

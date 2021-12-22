@@ -1,0 +1,6 @@
+<div>
+    <%= link_to myindex_path, class: "font-color myindex" do %>
+        <%= current_user.name %>のリスト
+    <% end %>
+    | <%= link_to 'みんなの投稿一覧', todos_path, class: "font-color" %>
+</div>

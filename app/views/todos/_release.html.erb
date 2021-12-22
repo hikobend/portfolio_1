@@ -1,0 +1,10 @@
+<td class="myindex_release">
+    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
+    <% if todo.release %>
+        <%= render 'open' %>
+    <% else %>
+    <span class="icon is-small">
+        <i class="fas fa-lock"></i>
+    </span>
+    <% end %>
+</td>

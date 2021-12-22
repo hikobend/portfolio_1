@@ -1,0 +1,9 @@
+<td class="myindex_btn">
+    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
+    <% if todo.complete %>
+    <%= link_to '戻す', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
+    <% else %>
+    <%= link_to '完了', is_finished_todo_path(todo), method: :put, class: "btn btn-info" %>
+    <% end %>
+    <%= link_to '削除', todo_path(todo), method: :delete, data: {confirm: "本当に削除しますか?"}, class: "btn btn-danger" %>
+</td>

@@ -57,6 +57,20 @@
     min-width: 73px;
 }
 
+.show_botton{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 150px;
+    margin: 10px auto;
+}
+
+.show_button_item{
+    // margin: 10px auto 10px 10px;
+    margin: 10px 0;
+}
+
+
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
 

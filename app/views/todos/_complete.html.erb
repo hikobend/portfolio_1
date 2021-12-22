@@ -1,0 +1,9 @@
+<% if todo.complete %>
+    <td class="complete">
+        <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
+    </td>
+<% else %>
+    <td>
+        <%= link_to todo.title3, todo_path(todo), class: "font-color" %>
+    </td>
+<% end %>

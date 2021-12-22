@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center">
     <div class="col-10 mt-5">
       <% @model == 'user' %>
-      <h3>【ユーザー名 検索結果】検索ワード : <%= @content %></h3>
+      <h3><span>【<span>ユーザー名</span> <span>検索結果</span>】</span><span>検索ワード : <%= @content %></span></h3>
       <%= render 'users/index', users: @records %>
     </div>
   </div>
