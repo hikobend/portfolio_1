@@ -1,0 +1,17 @@
+<!-- ハンバーガーメニュー部分 -->
+<div class="nav">
+  <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+  <input id="drawer_input" class="drawer_hidden" type="checkbox">
+  <!-- ハンバーガーアイコン -->
+  <label for="drawer_input" class="drawer_open"><span></span></label>
+  <!-- メニュー -->
+  <nav class="nav_content">
+    <ul class="nav_list">
+      <% if user_signed_in? %>
+        <%= render 'layouts/application_signin_list' %>
+      <% else %>
+        <%= render 'layouts/application_not_signin_list' %>
+      <% end %>
+    </ul>
+  </nav>
+</div>

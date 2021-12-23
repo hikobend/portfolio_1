@@ -1,0 +1,6 @@
+<h6 class="card-subtitle mb-2 text-muted">
+    <%= current_user.email %>
+</h6>
+<%= simple_format @user.profile %>
+<br>
+<%= link_to 'ユーザー編集', edit_user_path(@user) %>

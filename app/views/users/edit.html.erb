@@ -1,35 +1,11 @@
-<% if @user.errors.any? %>
-  <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading"><%= pluralize(@user.errors.count, "個のエラーがあります") %></h4>
-    <hr>
-    <p class="mb-0">
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </p>
-  </div>
-<% end %>
+<%= render 'error_users' %>
 
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
       <h2>編集</h2>
       <%= form_for @user do |f| %>
-        <div class="form-group">
-          <label>ユーザー名</label>
-          <%= f.text_field :name, class: "form-control", placeholder: "ユーザー名を入力" %>
-        </div>
-        <div class="form-group">
-          <label>ユーザープロフィール</label>
-          <%= f.text_area :profile, class: "form-control", placeholder: "プロフィールを入力" %>
-        </div> 
-        <div>
-        <div class="form-group user_image">
-          <label class="image">ユーザー画像</label>
-          <br>
-          <%= f.attachment_field :profile_image %>
-        </div>
-        <div>
+        <%= render 'user_profile', user: @users %>
         <div>
           <%= f.submit class: "btn btn-success" %>
         </div>

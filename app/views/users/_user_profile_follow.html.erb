@@ -1,0 +1,6 @@
+<td>
+    <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", size: '80x50', class: "profile_image" %>
+    <%= link_to user_path(user), class: "font-color" do %>
+        <%= user.name %>
+    <% end %>
+</td>

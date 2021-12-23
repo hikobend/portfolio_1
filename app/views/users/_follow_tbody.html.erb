@@ -1,0 +1,8 @@
+<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <%= render 'user_profile_follow', user: user %>
+        <%= render 'follow_check', user: user %>
+    </tr>
+    <% end %>
+</tbody>

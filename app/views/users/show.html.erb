@@ -7,28 +7,11 @@
           <h5 class="card-title">
             <%= @user.name %>
           </h5>
-          <p class="text-small">
-             <%= link_to @user.followings.count, followings_user_path(@user) %> フォロー
-             <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー
-          </p>
+          <%= render 'users_followed_count', user: @user %>
           <% if @user.id == current_user.id %>
-            <h6 class="card-subtitle mb-2 text-muted">
-              <%= current_user.email %>
-            </h6>
-            <%= simple_format @user.profile %>
-            <br>
-            <%= link_to 'ユーザー編集', edit_user_path(@user) %>
+            <%= render 'users_show_profile', user: @user %>
           <% elsif @user != current_user %>
-          <%# もし@userがフォローされていたら %>
-            <% if @user.is_followed_by?(current_user) %>
-              <%= link_to user_relationships_path(@user), method: :delete, data: {confirm: "本当にフォロー解除しますか?"} do %>
-                <button class="btn btn-danger">フォロー解除</button>
-              <% end %>
-            <% else %>
-              <%= link_to user_relationships_path(@user), method: :post do %>
-                <button class="btn btn-primary">フォロー</button>
-              <% end %> 
-            <% end %>
+            <%= render 'users_followed_check', user: @user %>
           <% end %>
         </div>
       </div>

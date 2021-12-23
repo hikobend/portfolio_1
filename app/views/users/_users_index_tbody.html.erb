@@ -1,0 +1,12 @@
+<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <%= render 'users_index_profile', user: user %>
+        <td>
+        <% if user != current_user %>
+        <%= render 'users_followed_check', user: user %>
+        <% end %>
+        </td>
+    </tr>
+    <% end %>
+</tbody>
