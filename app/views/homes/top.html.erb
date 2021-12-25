@@ -5,15 +5,15 @@
         <p><span class="under">W</span>eb <span class="under">a</span>pplication to <span class="under">S</span>hare <span class="under">T</span>asks</p>
       </h4>
       <div class="f-container">
-        <%= link_to new_user_session_path, class: "nav-link f-item" do %>
-            <button type="button" class="btn btn btn-primary top_login">ログイン</button>
+        <%= link_to new_user_session_path, class: "btn btn-primary f-item" do %>
+            ログイン
         <% end %>
-        <%= link_to new_user_registration_path, class: "nav-link f-item" do %>
-            <button type="button" class="btn btn btn-primary top_new">新規登録</button>
+        <%= link_to new_user_registration_path, class: "btn btn-primary f-item" do %>
+            新規登録
         <% end %>
-      </div>
-
-      <div>
+        <%= link_to users_guest_sign_in_path, class: "btn btn-success f-item", method: :post do %>
+            ゲストログイン
+        <% end %> 
       
       </div>
       <div class="plan text-center">

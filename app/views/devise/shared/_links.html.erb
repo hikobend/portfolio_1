@@ -1,30 +1,32 @@
 <div class="links">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "ログインページへ", new_session_path(resource_name), class: "nav_li" %><br />
+    <%= link_to "ログインページへ", new_session_path(resource_name), class: "nav_li btn btn-primary btn-block btn-color" %><br />
   <% end %>
 </div>
 
 <div class="links">
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "新規登録ページへ", new_registration_path(resource_name), class: "nav_li" %><br />
+    <%= link_to "新規登録ページへ", new_registration_path(resource_name), class: "nav_li btn btn-primary btn-block btn-color" %><br />
   <% end %>
 </div>
 
+<hr>
+
 <div class="links">
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "パスワードをお忘れですか?", new_password_path(resource_name), class: "nav_li" %><br />
+    <%= link_to "パスワードをお忘れですか?", new_password_path(resource_name), class: "nav_li btn btn-secondary btn-block btn-color" %><br />
   <% end %>
 </div>
 
 <div class="links">
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    <%= link_to "確認の連絡が来ませんでしたか?", new_confirmation_path(resource_name), class: "nav_li" %><br />
+    <%= link_to "確認の連絡が来ませんでしたか?", new_confirmation_path(resource_name), class: "nav_li btn-warning btn-block btn-color" %><br />
   <% end %>
 </div>
 
 <div class="links">
   <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-    <%= link_to "ロック解除の連絡が届きませんでしたか?", new_unlock_path(resource_name), class: "nav_li" %><br />
+    <%= link_to "ロック解除の連絡が届きませんでしたか?", new_unlock_path(resource_name), class: "nav_li btn-primary btn-block btn-color" %><br />
   <% end %>
 </div>
 

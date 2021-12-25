@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :rememberable, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   validates :profile, length: {maximum: 80 }
@@ -9,6 +9,17 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
   
+  # 新しくクラスメソッドを作成
+  def self.guest
+    find_or_create_by(email: 'guest@example.com') do |user|
+      #ゲストユーザーを作成する場合に必要な情報を作成
+      # ユーザーのパスワードをランダムにする
+      user.password = SecureRandom.urlsafe_base64
+      # ユーザーの名前をゲストユーザーにする
+      user.name = 'ゲストユーザー'
+    end
+  end
+
   has_many :todos, dependent: :destroy
   attachment :profile_image
   

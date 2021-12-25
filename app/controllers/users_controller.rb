@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def index
     # idをログインしている人以外のuser全てを取ってくる。
-    @users = User.all
+    # ゲストユーザー以外を取ってくる
+    @users = User.all.where.not(email: "guest@example.com")
   end
 
   def show
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
     # userのフォロワーを人全員を取ってくる
     @users = user.followers
   end
-
+    
   private
   def user_params
     params.require(:user).permit(:name, :email, :profile, :profile_image)\

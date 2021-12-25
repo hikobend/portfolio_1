@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-6 mx-auto">
       
-      <h2>新規登録</h2>
+      <h2 class="text-center">新規登録</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
         <div class="form-group">
@@ -41,9 +41,10 @@
         </div>
 
         <div>
-          <%= f.submit "新規登録", class: "btn btn-primary" %>
+          <%= f.submit "新規登録", class: "btn btn-primary btn-block" %>
         </div>
       <% end %>
+      <hr>
       <%= render "devise/shared/links" %>
     </div>
   </div>

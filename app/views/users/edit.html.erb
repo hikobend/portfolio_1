@@ -5,10 +5,28 @@
     <div class="col-6 mx-auto">
       <h2>編集</h2>
       <%= form_for @user do |f| %>
-        <%= render 'user_profile', user: @users %>
-        <div>
-          <%= f.submit class: "btn btn-success" %>
+        <div class="form-group">
+            <label>ユーザー名</label>
+            <%= f.text_field :name, class: "form-control", placeholder: "ユーザー名を入力" %>
         </div>
+        <div class="form-group">
+            <label>ユーザープロフィール</label>
+            <%= f.text_area :profile, class: "form-control", placeholder: "プロフィールを入力" %>
+        </div> 
+        <div>
+            <div class="form-group user_image">
+                <label class="image">ユーザー画像</label>
+                <br>
+                <%= f.attachment_field :profile_image %>
+            </div>
+        </div>
+        <% if @user.email != 'guest@example.com'%>
+          <div>
+            <%= f.submit class: "btn btn-success" %>
+          </div>
+        <% else %>
+          <%= 'ゲストログインでは編集不可' %>
+        <% end %>
       <% end %>
     </div>
   </div>

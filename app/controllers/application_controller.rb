@@ -10,11 +10,20 @@ class ApplicationController < ActionController::Base
     end
     
     def after_sign_out_path_for(resource_or_scope)
-        new_user_session_path
+        root_path
     end
     
+    def check_guest
+        email = resource&.email || params[:user][:email].downcase
+        if email  == 'guest@example.com'
+            redirect_to root_path, alert: 'ゲストユーザーの編集できません。'
+        end
+    end
+
     protected
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
+
+    
 end

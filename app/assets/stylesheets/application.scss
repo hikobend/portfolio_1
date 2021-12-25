@@ -150,6 +150,14 @@
   border: thick double rgb(93, 212, 129);
 }
 
+.btn-color{
+  color: #fff;
+}
+
+hr{
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 1000px) {
 	/* 1000px以下に適用されるCSS（タブレット用） */
    .nav{

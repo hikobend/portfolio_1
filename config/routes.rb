@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  root to: 'home#top'
+  root to: 'homes#top'
 
-  devise_for :users
+  devise_for :users, controllers:{
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
 
+  # deviseに新しいアクションを設定する
+  devise_scope :user do 
+    post '/users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   resources :users do
     resource :relationships, only: [:create, :destroy]
     # get -> followingsしてくれている人全員を表示。member -> ルーティングにidを含める
