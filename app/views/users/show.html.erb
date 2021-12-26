@@ -20,3 +20,56 @@
     </div>
   </div>
 </div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="todo_header_list">リスト</th>
+            <th scope="col">達成度</th>
+            <th scope="col" class="todo_header todo_header_btn">ボタン</th>
+            <th scope="col" class="todo_header todo_header_release">公開</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user.todos.each do |todo| %>
+            <tr>
+              <% if todo.user == current_user %>
+                <%= render 'todos/complete', todo: todo %>
+                <%= render 'todos/name_myindex', todo: todo %>
+                <%= render 'todos/change', todo: todo %>
+                <%= render 'todos/release', todo: todo %>
+                <% elsif todo.user != current_user && todo.release == true %>
+                  <% if todo.complete %>
+                    <td class="complete">
+                      <%= todo.title3 %>
+                    </td>
+                  <% else %>
+                    <td>
+                      <%= todo.title3 %>
+                    </td>
+                  <% end %>
+                  <td>
+                    <%= todo.body %>
+                  </td>
+                  <td class="myindex_btn">
+                    <%= "---" %>
+                  </td>
+                  <td class="myindex_release">
+                    <%# todoのcompleteカラムをis_finishedパスで呼び出し、表示を変更する %>
+                    <% if todo.release %>
+                      <span class="icon is-small">
+                        <i class="fas fa-lock-open"></i>
+                      </span>
+                    <% end %>
+                  </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
