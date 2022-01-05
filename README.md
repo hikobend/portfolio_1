@@ -1,24 +1,23 @@
-# README
+**このサービスを作った理由**
+日々進捗報告をすることが面倒な悩みを持った人に
+タスクの進捗を更新することで
+他のユーザーから進捗が確認できるサービスです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**ターゲットユーザー**
+・自分の行っているタスクを公開したいユーザー
 
-Things you may want to cover:
+**ユーザーが抱える課題**
+・進捗が終わったごとに「どこまで終わったのか」を報告すること億劫なユーザー
 
-* Ruby version
+**実装した機能**
+・タスクを公開or非公開に設定
+・ユーザーの詳細画面に遷移したとき、そのユーザーの公開中のタスクを確認できる
+・ユーザー名検索(完全一致検索、部分一致検索)
+・ユーザーをフォローする
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**アプリケーション内で使用している技術一覧**
+・Ruby on Rails
+・Docker
+・MySQL
+・Bootstrap
